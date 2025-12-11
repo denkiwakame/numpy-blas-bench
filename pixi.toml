@@ -8,11 +8,12 @@ version = "0.1.0"
 [tasks]
 doctor = "python -c 'import numpy; print(numpy.__config__.show())'"
 overhead = "python -m timeit 'import numpy as np'"
-dot = "python -m timeit 'import numpy as np; A=np.random.rand(4096,4096); B=np.random.rand(4096,4096); A@B'"
-vdot = "python -m timeit 'import numpy as np; a=np.random.rand(4096*128); b=np.random.rand(4096*128); np.dot(a,b)'"
-svd = "python -m timeit 'import numpy as np; E=np.random.rand(2048,1024); np.linalg.svd(E, full_matrices=False)'"
-cholesky = "python -m timeit 'import numpy as np; M=np.random.rand(2048,2048); M=M@M.T + 1e-6*np.eye(2048); np.linalg.cholesky(M)'"
-eig = "python -m timeit 'import numpy as np; M=np.random.rand(2048,2048); M=(M+M.T)/2; np.linalg.eig(M)'"
+dot = 'python -m timeit -s "import numpy as np; A=np.random.rand(4096,4096); B=np.random.rand(4096,4096)" "A@B"'
+vdot = 'python -m timeit -s "import numpy as np; a=np.random.rand(4096*128); b=np.random.rand(4096*128)" "np.dot(a,b)"'
+svd = 'python -m timeit -s "import numpy as np; E=np.random.rand(2048,1024)" "np.linalg.svd(E, full_matrices=False)"'
+cholesky = 'python -m timeit -s "import numpy as np; M=np.random.rand(2048,2048); M=M@M.T + 1e-6*np.eye(2048)" "np.linalg.cholesky(M)"'
+eig = 'python -m timeit -s "import numpy as np; M=np.random.rand(2048,2048); M=(M+M.T)/2" "np.linalg.eig(M)"'
+solve = 'python -m timeit -n 5 -s "import numpy as np; A=np.random.random((4096,4096)); b=np.ones(4096)" "np.linalg.solve(A, b)"'
 
 [dependencies]
 python = "==3.12"
