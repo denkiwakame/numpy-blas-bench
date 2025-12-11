@@ -32,6 +32,7 @@ pixi install -a
 ### Individual Benchmark
 
 ```
+pixi run -e pypi dot
 pixi run -e openblas dot
 pixi run -e mkl dot
 pixi run -e aocl dot
@@ -50,6 +51,7 @@ libblas           3.11.0      4_h4a7cf45_openblas   18.1 KiB    conda  https://c
 ```
 
 ```
+pixi run -e pypi doctor
 pixi run -e openblas doctor
 pixi run -e mkl doctor
 pixi run -e aocl doctor

@@ -9,6 +9,7 @@ BENCHS=(
 )
 
 BACKENDS=(
+  pypi
   openblas
   mkl
   aocl
