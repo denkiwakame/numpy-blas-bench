@@ -6,6 +6,7 @@ BENCHS=(
   svd
   cholesky
   eig
+  ols
   solve
 )
 
