@@ -36,6 +36,8 @@ pixi run -e pypi dot
 pixi run -e openblas dot
 pixi run -e mkl dot
 pixi run -e aocl dot
+pixi run -e blis dot
+pixi run -e netlib dot
 ```
 
 ## Validation
